@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG LIFE - Find Your Perfect Paying Guest Accommodation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .hero-bg {
+            background-image: url('pglife image/bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center">
+                    <img src="pglife image/logo.png" alt="PG Life Logo" class="h-16">
+                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 flex items-center space-x-1" onclick="document.getElementById('signup-modal').classList.remove('hidden'); return false;">
+                        <i class="fas fa-user"></i>
+                        <span>Signup</span>
+                    </a>
+                    <span class="text-gray-300">|</span>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 flex items-center space-x-1" onclick="document.getElementById('login-modal').classList.remove('hidden'); return false;">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-96 flex items-center justify-center">
+        <div class="text-center text-white">
+            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">Happiness Per Square Foot</h1>
+            <div class="max-w-2xl mx-auto mt-8">
+                <div class="flex items-center bg-white rounded-lg shadow-lg p-2">
+                    <input type="text" placeholder="Search for PG, Hostels, Apartments..." class="flex-1 px-4 py-2 outline-none text-gray-800">
+                    <button class="bg-orange-500 text-white px-6 py-2 rounded-lg hover:bg-orange-600">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cities Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">Major Cities</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <a href="property_list.html?city=Delhi" class="text-center group">
+                    <div class="bg-white rounded-full p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 group-hover:scale-105">
+                        <img src="pglife image/delhi.png" alt="Delhi" class="w-32 h-32 mx-auto">
+                    </div>
+                    <p class="mt-4 text-lg font-semibold text-gray-700">Delhi</p>
+                </a>
+                <a href="property_list.html?city=Mumbai" class="text-center group">
+                    <div class="bg-white rounded-full p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 group-hover:scale-105">
+                        <img src="pglife image/mumbai.png" alt="Mumbai" class="w-32 h-32 mx-auto">
+                    </div>
+                    <p class="mt-4 text-lg font-semibold text-gray-700">Mumbai</p>
+                </a>
+                <a href="property_list.html?city=Bangalore" class="text-center group">
+                    <div class="bg-white rounded-full p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 group-hover:scale-105">
+                        <img src="pglife image/bangalore.png" alt="Bangalore" class="w-32 h-32 mx-auto">
+                    </div>
+                    <p class="mt-4 text-lg font-semibold text-gray-700">Bangalore</p>
+                </a>
+                <a href="property_list.html?city=Hyderabad" class="text-center group">
+                    <div class="bg-white rounded-full p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 group-hover:scale-105">
+                        <img src="pglife image/hyderabad.png" alt="Hyderabad" class="w-32 h-32 mx-auto">
+                    </div>
+                    <p class="mt-4 text-lg font-semibold text-gray-700">Hyderabad</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-8 mb-6">
+                <a href="property_list.html?city=Delhi" class="hover:text-orange-400">PG in Delhi</a>
+                <a href="property_list.html?city=Mumbai" class="hover:text-orange-400">PG in Mumbai</a>
+                <a href="property_list.html?city=Bangalore" class="hover:text-orange-400">PG in Bengaluru</a>
+                <a href="property_list.html?city=Hyderabad" class="hover:text-orange-400">PG in Hyderabad</a>
+            </div>
+            <div class="text-center text-gray-400">
+                <p>&copy; 2024 Copyright PG Life. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold">Signup with PGLife</h3>
+                <button onclick="document.getElementById('signup-modal').classList.add('hidden')" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="signup-form" onsubmit="event.preventDefault(); alert('Signup functionality - Frontend only'); document.getElementById('signup-modal').classList.add('hidden');">
+                <div class="space-y-4">
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-user text-gray-400 px-3"></i>
+                        <input type="text" placeholder="Full Name" class="flex-1 outline-none" required>
+                    </div>
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-phone-alt text-gray-400 px-3"></i>
+                        <input type="tel" placeholder="Phone Number" class="flex-1 outline-none" maxlength="10" required>
+                    </div>
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-envelope text-gray-400 px-3"></i>
+                        <input type="email" placeholder="Email" class="flex-1 outline-none" required>
+                    </div>
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-lock text-gray-400 px-3"></i>
+                        <input type="password" placeholder="Password" class="flex-1 outline-none" minlength="6" required>
+                    </div>
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-university text-gray-400 px-3"></i>
+                        <input type="text" placeholder="College Name" class="flex-1 outline-none" required>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span>I'm a</span>
+                        <label class="flex items-center">
+                            <input type="radio" name="gender" value="male" class="mr-2">
+                            Male
+                        </label>
+                        <label class="flex items-center">
+                            <input type="radio" name="gender" value="female" class="mr-2">
+                            Female
+                        </label>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Create Account</button>
+                </div>
+            </form>
+            <p class="text-center mt-4 text-sm text-gray-600">
+                Already have an account? 
+                <a href="#" onclick="document.getElementById('signup-modal').classList.add('hidden'); document.getElementById('login-modal').classList.remove('hidden'); return false;" class="text-blue-600">Login</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold">Login with PGLife</h3>
+                <button onclick="document.getElementById('login-modal').classList.add('hidden')" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="login-form" onsubmit="event.preventDefault(); alert('Login functionality - Frontend only'); document.getElementById('login-modal').classList.add('hidden');">
+                <div class="space-y-4">
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-user text-gray-400 px-3"></i>
+                        <input type="email" placeholder="Email" class="flex-1 outline-none" required>
+                    </div>
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-lock text-gray-400 px-3"></i>
+                        <input type="password" placeholder="Password" class="flex-1 outline-none" minlength="6" required>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

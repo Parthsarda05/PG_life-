@@ -1,0 +1,166 @@
+*{
+    box-sizing: border-box;
+}
+section{
+    padding-top: 10px; 
+}
+
+
+
+.fa-magnifying-glass{
+    color: white;
+}
+
+
+
+
+
+.navbar > div{
+    height: 100%;
+    width: 50%; 
+ 
+}
+.search_box{
+ z-index: -1000;
+ margin-top: 50px;
+ margin-left: 2px;
+ height : 500px;
+ width: 99%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ position: fixed;
+ background-image: url(pglife\ image/bg.png);
+ background-size: cover;
+}
+h1{
+    text-align: center;
+}
+
+
+.happiness{
+    height: 10%;
+    width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: medium;
+  color: black;
+  
+}
+.search_icon{
+    height: 7%;
+    width: 50%;
+   border: solid 2px orange;
+   display: flex;
+   justify-content: flex-end;
+   background-color: white;
+   
+}
+
+.search_icon > div {
+    height: 100%;
+    width: 5%;
+   border: solid 1px black;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #aebac2;
+}
+
+.cities{
+    margin-top: 550px;
+    width: 100.25%;
+    height: 400px; 
+    display: flex; 
+    flex-direction: column;
+    padding-top: 3%;
+    align-items: center;
+    background-color: white;
+}
+.major_cities{
+    width: 35%;
+   height: 15%;
+}
+.city_logo{
+    width: 100%;
+    height: 100%;
+    margin-bottom: 3%;  
+    display: flex;
+   align-items: center;
+   justify-content: center;  
+}
+.city_logo > div {
+    border: solid 2px whitesmoke;
+    box-shadow: 50px;
+    width: 150px;
+    height: 160px;
+    border-radius: 50%;
+    margin-left: 3%;
+}
+.delhi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.mumbai{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+   
+}
+
+.bangalore{
+    display: flex;
+    justify-content: center;
+  
+   
+}
+
+.hyderabad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.end{
+    height: 150px;
+    width: 100.25%; 
+    background-color:#333333; 
+}
+.pg_city_listed{
+    border: solid 2px black;
+    height: 50%;
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pg_city_listed > div {
+    height: 25%;
+    width: 120px;
+    margin-left: 70px;
+    margin-right: 10px;
+    color:whitesmoke;
+    
+}
+
+.copyright{
+    width: 100%;
+    height: 50%;
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.copyright > div {
+    width: 50%;
+    height: 40%;
+    margin-top: 3%;
+    color: #F5F5F5;
+}
+

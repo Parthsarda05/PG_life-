@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details - PG Life</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center">
+                    <img src="pglife image/logo.png" alt="PG Life Logo" class="h-16">
+                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-700 hover:text-blue-600 flex items-center space-x-1" onclick="document.getElementById('signup-modal').classList.remove('hidden'); return false;">
+                        <i class="fas fa-user"></i>
+                        <span>Signup</span>
+                    </a>
+                    <span class="text-gray-300">|</span>
+                    <a href="#" class="text-gray-700 hover:text-blue-600 flex items-center space-x-1" onclick="document.getElementById('login-modal').classList.remove('hidden'); return false;">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="bg-gray-100 py-2">
+        <div class="container mx-auto px-4">
+            <ol class="flex items-center space-x-2 text-sm">
+                <li><a href="index.html" class="text-blue-600 hover:underline">Home</a></li>
+                <li><span class="text-gray-500">/</span></li>
+                <li><a href="property_list.html" id="city-link" class="text-blue-600 hover:underline">Properties</a></li>
+                <li><span class="text-gray-500">/</span></li>
+                <li class="text-gray-700">Property Details</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Loading State -->
+    <div id="loading" class="container mx-auto px-4 py-12 text-center">
+        <img src="pglife image/progress_spinner.gif" alt="Loading" class="mx-auto mb-4">
+        <p class="text-gray-600">Loading property details...</p>
+    </div>
+
+    <!-- Property Content -->
+    <div id="property-content" class="hidden container mx-auto px-4 py-8">
+        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+            <div class="flex justify-between items-start mb-4">
+                <div class="flex-1">
+                    <h1 id="property-name" class="text-3xl font-bold mb-2"></h1>
+                    <p id="property-address" class="text-gray-600"></p>
+                </div>
+                <div class="text-center ml-4">
+                    <i class="far fa-heart text-red-500 text-3xl cursor-pointer hover:text-red-600" id="interest-heart"></i>
+                    <div id="interested-count" class="text-sm text-gray-600 mt-2"></div>
+                </div>
+            </div>
+            <div id="property-rating" class="flex items-center space-x-1 mb-4"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- Main Image and Gallery -->
+            <div class="md:col-span-2">
+                <img id="main-image" src="" alt="Property Image" class="w-full h-96 object-cover rounded-lg mb-4">
+                <div id="image-thumbnails" class="grid grid-cols-4 gap-2"></div>
+            </div>
+
+            <!-- Property Info Sidebar -->
+            <div class="space-y-6">
+                <!-- Rent Card -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Rent</h3>
+                    <div id="property-rent" class="text-3xl font-bold text-blue-600 mb-2"></div>
+                    <p class="text-gray-500">per month</p>
+                    <hr class="my-4">
+                    <div class="space-y-3">
+                        <div>
+                            <strong>Gender:</strong>
+                            <div id="property-gender" class="mt-1"></div>
+                        </div>
+                        <div>
+                            <strong>City:</strong>
+                            <span id="property-city" class="ml-2"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Amenities Card -->
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h4 class="text-xl font-bold mb-4">Amenities</h4>
+                    <div id="amenities-list" class="space-y-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup/Login Modals -->
+    <div id="signup-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold">Signup with PGLife</h3>
+                <button onclick="document.getElementById('signup-modal').classList.add('hidden')" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('Signup - Frontend only'); document.getElementById('signup-modal').classList.add('hidden');">
+                <div class="space-y-4">
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-user text-gray-400 px-3"></i>
+                        <input type="text" placeholder="Full Name" class="flex-1 outline-none" required>
+                    </div>
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-phone-alt text-gray-400 px-3"></i>
+                        <input type="tel" placeholder="Phone Number" class="flex-1 outline-none" maxlength="10" required>
+                    </div>
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-envelope text-gray-400 px-3"></i>
+                        <input type="email" placeholder="Email" class="flex-1 outline-none" required>
+                    </div>
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-lock text-gray-400 px-3"></i>
+                        <input type="password" placeholder="Password" class="flex-1 outline-none" minlength="6" required>
+                    </div>
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-university text-gray-400 px-3"></i>
+                        <input type="text" placeholder="College Name" class="flex-1 outline-none" required>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <span>I'm a</span>
+                        <label class="flex items-center"><input type="radio" name="gender" value="male" class="mr-2">Male</label>
+                        <label class="flex items-center"><input type="radio" name="gender" value="female" class="mr-2">Female</label>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Create Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="login-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold">Login with PGLife</h3>
+                <button onclick="document.getElementById('login-modal').classList.add('hidden')" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('Login - Frontend only'); document.getElementById('login-modal').classList.add('hidden');">
+                <div class="space-y-4">
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-user text-gray-400 px-3"></i>
+                        <input type="email" placeholder="Email" class="flex-1 outline-none" required>
+                    </div>
+                    <div class="flex items-center border rounded-lg p-2">
+                        <i class="fas fa-lock text-gray-400 px-3"></i>
+                        <input type="password" placeholder="Password" class="flex-1 outline-none" minlength="6" required>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="property_detail.js"></script>
+</body>
+</html>
